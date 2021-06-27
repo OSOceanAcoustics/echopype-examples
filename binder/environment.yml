@@ -7,4 +7,6 @@ dependencies:
   - hvplot
   - panel
   - datashader
+  - cartopy
+  - geopandas
   - echopype
