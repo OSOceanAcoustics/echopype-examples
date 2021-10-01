@@ -10,4 +10,4 @@ dependencies:
   - datashader
   - cartopy
   - geopandas=0.9.0
-  - echopype=0.5.2
+  - echopype=0.5.4
