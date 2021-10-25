@@ -5,6 +5,9 @@ dependencies:
   - python=3.8
   - ipykernel
   - hvplot
-  - panel
+  - holoviews=1.14.5
+  # - panel
   - datashader
-  - echopype
+  - cartopy
+  - geopandas=0.9.0
+  - echopype=0.5.4
