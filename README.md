@@ -4,7 +4,10 @@
 
 ## Purpose
 
-This repository illustrates the functionalities of [echopype](https://echopype.readthedocs.io/en/stable/), an open-source Python library that enables interoperability and scalability in water column sonar data analysis. The materials can be found within the [notebooks](https://github.com/OSOceanAcoustics/echopype-examples/tree/main/notebooks) folder in `.ipynb` files, which are [Jupyter notebooks](https://realpython.com/jupyter-notebook-introduction/). Open the [index.ipynb](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.ipynb) notebook to see an index of the existing example notebooks. To see the notebooks accurately rendered (GitHub notebook rendering has shortcomings), [open the index notebook in https://nbviewer.org](https://nbviewer.org/github/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.ipynb).
+This repository illustrates the functionalities of [echopype](https://echopype.readthedocs.io/en/stable/), an open-source Python library that enables interoperability and scalability of water column sonar data processing. 
+The materials can be found within the [notebooks](https://github.com/OSOceanAcoustics/echopype-examples/tree/main/notebooks) folder in `.ipynb` files, which are [Jupyter notebooks](https://realpython.com/jupyter-notebook-introduction/). 
+Open the [index.ipynb](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.ipynb) notebook to see an index of the existing example notebooks. 
+To see the notebooks accurately rendered (GitHub notebook rendering has shortcomings), [open the index notebook at https://nbviewer.org](https://nbviewer.org/github/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.ipynb).
 
 To actively explore and run the notebooks without downloading them or having to configure a Python environment locally, open them with https://mybinder.org:
 - Click on the "launch binder" badge above to launch a sandbox copy. The typical start time is about 3 minutes. 
