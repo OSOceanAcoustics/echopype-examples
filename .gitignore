@@ -134,3 +134,7 @@ dmypy.json
 
 # VSCODE
 .vscode/
+
+# Jupyter Book
+_build/
+converted_ek60

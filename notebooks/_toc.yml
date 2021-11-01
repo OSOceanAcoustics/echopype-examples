@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Demonstrations
+    numbered: True  # Only applies to chapters in Part 1.
+    chapters:
+    - file: ms_PacificHake_EK60_cruisetracks
+    - file: ms_OOI_EK60_mooringtimeseries
