@@ -1,8 +1,16 @@
-# echopype-examples
+# echopype examples
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/master)
+<div>
+  <a href="https://doi.org/10.5281/zenodo.5618178">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5618178.svg" alt="DOI">
+  </a>
 
-## Purpose
+  <a href="https://raw.githubusercontent.com/OSOceanAcoustics/echopype-examples/main/LICENSE">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/OSOceanAcoustics/echopype-examples">
+  </a>
+</div>
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/HEAD?labpath=https%3A%2F%2Fgithub.com%2FOSOceanAcoustics%2Fechopype-examples%2Fblob%2Fmain%2Fnotebooks%2Findex.ipynb)
 
 This repository illustrates the functionalities of [echopype](https://echopype.readthedocs.io/en/stable/), an open-source Python library that enables interoperability and scalability of water column sonar data processing. 
 The materials can be found within the [notebooks](https://github.com/OSOceanAcoustics/echopype-examples/tree/main/notebooks) folder in `.ipynb` files, which are [Jupyter notebooks](https://realpython.com/jupyter-notebook-introduction/). 
@@ -15,6 +23,7 @@ To actively explore and run the notebooks without downloading them or having to 
 - When you are done, just close the browser tab and the sandbox will be removed.
 
 To run the notebooks locally in your computer, clone this repository and create a conda environment using the conda environment file [environment.yml](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/binder/environment.yml) found in the `binder` folder:
+
 ```bash
 conda env create -f environment.yml
 ```
