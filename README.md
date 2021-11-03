@@ -1,8 +1,8 @@
 # echopype examples
 
 <div>
-  <a href="https://doi.org/10.5281/zenodo.5618178">
-    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5618178.svg" alt="DOI">
+  <a href="https://doi.org/10.5281/zenodo.5618177">
+    <img src="https://img.shields.io/badge/DOI-10.5281/zenodo.5618177-blue" alt="DOI">
   </a>
 
   <a href="https://raw.githubusercontent.com/OSOceanAcoustics/echopype-examples/main/LICENSE">
