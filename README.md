@@ -10,7 +10,7 @@
   </a>
 </div>
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/HEAD?labpath=https%3A%2F%2Fgithub.com%2FOSOceanAcoustics%2Fechopype-examples%2Fblob%2Fmain%2Fnotebooks%2Findex.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/main?labpath=notebooks/index.ipynb)
 
 This repository illustrates the functionalities of [echopype](https://echopype.readthedocs.io/en/stable/), an open-source Python library that enables interoperability and scalability of water column sonar data processing. 
 The materials can be found within the [notebooks](https://github.com/OSOceanAcoustics/echopype-examples/tree/main/notebooks) folder in `.ipynb` files, which are [Jupyter notebooks](https://realpython.com/jupyter-notebook-introduction/). 
