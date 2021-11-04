@@ -4,24 +4,6 @@ description: 'Create conda environment for GitHub Action Job'
 runs:
   using: "composite"
   steps:
-    - name: Setup Conda Cache
-      uses: actions/cache@v2
-      env:
-        # Increase this value to reset cache if environment.yml has not changed
-        CACHE_NUMBER: 0
-      with:
-        path: ~/conda_pkgs_dir
-        key:
-          ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('binder/conda-linux-64.lock') }}
-
-    - name: Setup Conda Environment
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        miniforge-version: latest
-        auto-update-conda: false
-        environment-file: binder/conda-linux-64.lock #or binder/environment.yml
-        activate-environment: hackweek
-        use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
     - name: Cache conda
       uses: actions/cache@v2
       env:
