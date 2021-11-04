@@ -5,6 +5,7 @@ dependencies:
   - python=3.9
   - ipykernel
   - echopype=0.5.4
+  - s3fs=2021.10.1
   - geopandas
   - cartopy
   # -- holoviz --
