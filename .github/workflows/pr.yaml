@@ -1,0 +1,44 @@
+name: Pull Request
+on:
+  pull_request_target:
+    branches:
+      - main
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup python environment
+        uses: ./.github/actions/setupconda
+      - name: Print conda env
+        run: |
+          conda info
+          conda list
+      - name: Install Jupyterbook
+        run: |
+          mamba install -c conda-forge --yes jupyter-book
+      - name: Build JupyterBook
+        run: |
+          jupyter-book build --config $PWD/jupyterbook/config.yml --toc $PWD/jupyterbook/toc.yml notebooks
+      - name: Deploy Website Preview
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './notebooks/_build/html'
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-commit-comment: false
+          enable-pull-request-comment: true
+          overwrites-pull-request-comment: true
+          alias: deploy-preview-${{ github.event.number }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

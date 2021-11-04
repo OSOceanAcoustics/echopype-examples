@@ -1,0 +1,44 @@
+name: Deploy
+on:
+  push:
+    paths:
+      - 'notebooks/**'
+      - '.github/workflows/deploy.yaml'
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Setup python environment
+        uses: ./.github/actions/setupconda
+      - name: Print conda env
+        run: |
+          conda info
+          conda list
+      - name: Install Jupyterbook
+        run: |
+          mamba install -c conda-forge --yes jupyter-book
+
+      - name: Build JupyterBook
+        run: |
+          jupyter-book build --config $PWD/jupyterbook/config.yml --toc $PWD/jupyterbook/toc.yml notebooks
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: notebooks/_build/html
+          publish_branch: gh-pages
+
+      - name: Save Build
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: notebooks/_build/
