@@ -1,0 +1,43 @@
+name: Environment Checker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-environments:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: echopype
+          miniconda-version: "latest"
+          environment-file: binder/environment.yml
+          channel-priority: strict
+          show-channel-urls: true
+          use-only-tar-bz2: false
+      - name: Linux
+        if: contains(matrix.os, 'ubuntu')
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda list
+      - name: Mac OS
+        if: contains(matrix.os, 'macos')
+        shell: sh -l {0}
+        run: |
+          conda info
+          conda list
+      - name: Windows
+        if: contains(matrix.os, 'windows')
+        shell: powershell
+        run: |
+          conda info
+          conda list
