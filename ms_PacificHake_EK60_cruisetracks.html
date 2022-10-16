@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>2. Exploring ship echosounder data from the Pacific Hake survey &#8212; Echopype Examples</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -115,107 +129,209 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ms_PacificHake_EK60_cruisetracks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/OSOceanAcoustics/echopype-examples"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/OSOceanAcoustics/echopype-examples/issues/new?title=Issue%20on%20page%20%2Fms_PacificHake_EK60_cruisetracks.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/main?urlpath=tree/notebooks/ms_PacificHake_EK60_cruisetracks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OSOceanAcoustics/echopype-examples/main?urlpath=tree/notebooks/ms_PacificHake_EK60_cruisetracks.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/OSOceanAcoustics/echopype-examples"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/OSOceanAcoustics/echopype-examples/issues/new?title=Issue%20on%20page%20%2Fms_PacificHake_EK60_cruisetracks.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ms_PacificHake_EK60_cruisetracks.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    2.1. Introduction
@@ -327,12 +443,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Exploring ship echosounder data from the Pacific Hake survey</h1>
@@ -460,44 +575,45 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exploring-ship-echosounder-data-from-the-pacific-hake-survey">
-<h1><span class="section-number">2. </span>Exploring ship echosounder data from the Pacific Hake survey<a class="headerlink" href="#exploring-ship-echosounder-data-from-the-pacific-hake-survey" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-ship-echosounder-data-from-the-pacific-hake-survey">
+<h1><span class="section-number">2. </span>Exploring ship echosounder data from the Pacific Hake survey<a class="headerlink" href="#exploring-ship-echosounder-data-from-the-pacific-hake-survey" title="Permalink to this headline">#</a></h1>
 <p>Jupyter notebook accompanying the manuscript:</p>
 <p><em>Echopype: A Python library for interoperable and scalable processing of ocean sonar data for biological information</em><br />
 <em>Authors: Wu-Jung Lee, Emilio Mayorga, Landung Setiawan, Kavin Nguyen, Imran Majeed, Valentina Staneva</em></p>
-<div class="section" id="introduction">
-<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="goals">
-<h3><span class="section-number">2.1.1. </span>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
+<section id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<section id="goals">
+<h3><span class="section-number">2.1.1. </span>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Illustrate a common workflow for echosounder data conversion, calibration and use. This workflow leverages the standardization applied by echopype and the power, ease of use and familiarity of libraries in the scientific Python ecosystem.</p></li>
 <li><p>Extract and visualize data with relative ease using geospatial and temporal filters.</p></li>
 </ul>
-</div>
-<div class="section" id="description">
-<h3><span class="section-number">2.1.2. </span>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="description">
+<h3><span class="section-number">2.1.2. </span>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
 <p>This notebook uses EK60 echosounder data collected during the <a class="reference external" href="https://www.fisheries.noaa.gov/west-coast/science-data/joint-us-canada-integrated-ecosystem-and-pacific-hake-acoustic-trawl-survey">2017 Joint U.S.-Canada Integrated Ecosystem and Pacific Hake Acoustic Trawl Survey (‘Pacific Hake Survey’)</a> to illustrate a common workflow for data conversion, calibration and analysis using <a class="reference external" href="https://echopype.readthedocs.io"><code class="docutils literal notranslate"><span class="pre">echopype</span></code></a> and core scientific Python software packages, particularly <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, <code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>.</p>
 <p>Two days of cloud-hosted <code class="docutils literal notranslate"><span class="pre">.raw</span></code> data files are accessed by echopype directly from an <a class="reference external" href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> S3 “bucket” maintained by the <a class="reference external" href="https://registry.opendata.aws/ncei-wcsd-archive/">NOAA NCEI Water-Column Sonar Data Archive</a>. The total data used are 170 <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files at approximately 25 MB each (1 Hz pinging rate from first light to dusk), corresponding to approximately 4.2 GB. With <code class="docutils literal notranslate"><span class="pre">echopype</span></code>, each file is converted to a standardized representation based on the <a class="reference external" href="https://github.com/ices-publications/SONAR-netCDF4/">SONAR-netCDF4 v1.0 convention</a> and saved to the cloud-optimized <a class="reference external" href="https://zarr.readthedocs.io">Zarr</a> format.</p>
 <p>Data stored in the netCDF-based SONAR-netCDF4 convention can be conveniently and intuitively manipulated with <code class="docutils literal notranslate"><span class="pre">xarray</span></code> in combination with related scientific Python packages. <a class="reference external" href="http://www.fao.org/3/X5818E/x5818e07.htm">Mean Volume Backscattering Strength (MVBS)</a> is computed with <code class="docutils literal notranslate"><span class="pre">echopype</span></code> from each raw data file and exported to a netCDF file. Here, we define two geographical bounding boxes encompassing two ship tracks and use these to extract corresponding timestamp intervals from the GPS data, and then the corresponding MVBS data based on those intervals. Finally, these extracted MVBS subsets are plotted as track echograms.</p>
-</div>
-<div class="section" id="outline">
-<h3><span class="section-number">2.1.3. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="outline">
+<h3><span class="section-number">2.1.3. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Establish AWS S3 file system connection and generate list of target EK60 <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</p></li>
 <li><p>Process S3-hosted raw files with <code class="docutils literal notranslate"><span class="pre">echopype</span></code>: convert, calibrate and export to standardized files</p></li>
 <li><p>Extract and process GPS locations from the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> group of converted raw files</p></li>
 <li><p>Read MVBS and plot track echograms for time periods corresponding to two ship tracks</p></li>
 </ol>
-</div>
-<div class="section" id="running-the-notebook">
-<h3><span class="section-number">2.1.4. </span>Running the notebook<a class="headerlink" href="#running-the-notebook" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-the-notebook">
+<h3><span class="section-number">2.1.4. </span>Running the notebook<a class="headerlink" href="#running-the-notebook" title="Permalink to this headline">#</a></h3>
 <p>This notebook can be run with a conda environment created using the conda environment file <a class="reference external" href="https://github.com/OSOceanAcoustics/echopype-examples/blob/echopype_paper/binder/environment.yml">https://github.com/OSOceanAcoustics/echopype-examples/blob/echopype_paper/binder/environment.yml</a>. The notebook creates two directories, if not already present: <code class="docutils literal notranslate"><span class="pre">./exports/hakesurvey_convertednc</span></code> and <code class="docutils literal notranslate"><span class="pre">./exports/hakesurvey_calibratednc</span></code>. netCDF and Zarr files will be exported there.</p>
-</div>
-<div class="section" id="note">
-<h3><span class="section-number">2.1.5. </span>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="note">
+<h3><span class="section-number">2.1.5. </span>Note<a class="headerlink" href="#note" title="Permalink to this headline">#</a></h3>
 <p>We encourage importing <code class="docutils literal notranslate"><span class="pre">echopype</span></code> as <code class="docutils literal notranslate"><span class="pre">ep</span></code> for consistency.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,10 +638,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="establish-aws-s3-file-system-connection-and-generate-list-of-target-ek60-raw-files">
-<h2><span class="section-number">2.2. </span>Establish AWS S3 file system connection and generate list of target EK60 <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files<a class="headerlink" href="#establish-aws-s3-file-system-connection-and-generate-list-of-target-ek60-raw-files" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="establish-aws-s3-file-system-connection-and-generate-list-of-target-ek60-raw-files">
+<h2><span class="section-number">2.2. </span>Establish AWS S3 file system connection and generate list of target EK60 <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files<a class="headerlink" href="#establish-aws-s3-file-system-connection-and-generate-list-of-target-ek60-raw-files" title="Permalink to this headline">#</a></h2>
 <p>Access and inspect the publicly accessible NCEI WCSD S3 bucket on the AWS cloud as if it were a local file system. This will be done through the Python <a class="reference external" href="https://filesystem-spec.readthedocs.io">fsspec</a> file system and bytes storage interface. We will use <code class="docutils literal notranslate"><span class="pre">fsspec.filesystem.glob</span></code> (<code class="docutils literal notranslate"><span class="pre">fs.glob</span></code>) to generate a list of all EK60 <code class="docutils literal notranslate"><span class="pre">.raw</span></code> data files in the bucket, then filter on file names for target dates of interest.</p>
 <p>The directory path on the <a class="reference external" href="https://ncei-wcsd-archive.s3.amazonaws.com/index.html">ncei-wcsd-archive S3 bucket</a> is <code class="docutils literal notranslate"><span class="pre">s3://ncei-wcsd-archive/data/raw/Bell_M._Shimada/SH1707/EK60/</span></code>. All <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files from the 2017 Hake survey cruise are found here.</p>
 <div class="cell docutils container">
@@ -572,9 +688,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="process-s3-hosted-raw-files-with-echopype-convert-calibrate-and-export-to-standardized-files">
-<h2><span class="section-number">2.3. </span>Process S3-hosted raw files with <code class="docutils literal notranslate"><span class="pre">echopype</span></code>: convert, calibrate and export to standardized files<a class="headerlink" href="#process-s3-hosted-raw-files-with-echopype-convert-calibrate-and-export-to-standardized-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="process-s3-hosted-raw-files-with-echopype-convert-calibrate-and-export-to-standardized-files">
+<h2><span class="section-number">2.3. </span>Process S3-hosted raw files with <code class="docutils literal notranslate"><span class="pre">echopype</span></code>: convert, calibrate and export to standardized files<a class="headerlink" href="#process-s3-hosted-raw-files-with-echopype-convert-calibrate-and-export-to-standardized-files" title="Permalink to this headline">#</a></h2>
 <p>Loop through all the selected raw files on S3 and convert, calibrate and generate Mean Volume Backscattering Strength (MVBS). Save the raw converted and MVBS data to local files, as zarr and netCDF, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,8 +736,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="echopype-processing">
-<h3><span class="section-number">2.3.1. </span>echopype processing<a class="headerlink" href="#echopype-processing" title="Permalink to this headline">¶</a></h3>
+<section id="echopype-processing">
+<h3><span class="section-number">2.3.1. </span>echopype processing<a class="headerlink" href="#echopype-processing" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">EchoData</span></code> is an echopype object for conveniently handling raw converted data from either raw instrument files or previously converted and standardized raw netCDF4 and Zarr files. It is essentially a container for multiple <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> objects, each corresponds to one of the netCDF4 groups specified in the SONAR-netCDF4 convention – the convention followed by echopype. The <code class="docutils literal notranslate"><span class="pre">EchoData</span></code> object can be used to conveniently accesse and explore the echosounder raw data and for calibration and other processing.</p>
 <p>The cell below contains the main echopype workflow steps. For each raw file:</p>
 <ul class="simple">
@@ -1012,9 +1128,9 @@ Wall time: 16min 54s
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="test-for-time-reversals">
-<h3><span class="section-number">2.3.2. </span>Test for time reversals<a class="headerlink" href="#test-for-time-reversals" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-for-time-reversals">
+<h3><span class="section-number">2.3.2. </span>Test for time reversals<a class="headerlink" href="#test-for-time-reversals" title="Permalink to this headline">#</a></h3>
 <p>Small time reversals are found in EK60 datasets, including the 2017 Pacific Hake survey, where the <code class="docutils literal notranslate"><span class="pre">ping_time</span></code> (or GPS <code class="docutils literal notranslate"><span class="pre">time1</span></code>) value may be lower (older) than the preceding <code class="docutils literal notranslate"><span class="pre">ping_time</span></code> by a second. Such discontinuities can interfere with concatenating individual raw files to produce an aggregated dataset. The capability to identify and address these reversals is in the <code class="docutils literal notranslate"><span class="pre">echopype.qc</span></code> subpackage.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1028,9 +1144,9 @@ Wall time: 16min 54s
 </div>
 </div>
 <p>There are no time reversals in this two-day dataset, fortunately.</p>
-</div>
-<div class="section" id="examine-the-echodata-object-for-one-of-the-data-files">
-<h3><span class="section-number">2.3.3. </span>Examine the EchoData object for one of the data files<a class="headerlink" href="#examine-the-echodata-object-for-one-of-the-data-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="examine-the-echodata-object-for-one-of-the-data-files">
+<h3><span class="section-number">2.3.3. </span>Examine the EchoData object for one of the data files<a class="headerlink" href="#examine-the-echodata-object-for-one-of-the-data-files" title="Permalink to this headline">#</a></h3>
 <p>echopype provides a user-friendly, convenient representation of an <code class="docutils literal notranslate"><span class="pre">EchoData</span></code> object that leverages the user-friendly xarray <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> HTML representation. Since an <code class="docutils literal notranslate"><span class="pre">EchoData</span></code> object is effectively a container for multiple <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> objects corresponding to netCDF4 groups, the notebook “print out” provides a summary view of all the groups and interactive access to summaries of each group.</p>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">ed</span></code> is the last object opened in the time reversal test, in the preceding cell.</p>
 <div class="cell docutils container">
@@ -4636,10 +4752,10 @@ dl.xr-attrs {
 }
 .xr-wrap{width:700px!important;}</style></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="extract-and-process-gps-locations-from-the-platform-group-of-converted-raw-files">
-<h2><span class="section-number">2.4. </span>Extract and process GPS locations from the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> group of converted raw files<a class="headerlink" href="#extract-and-process-gps-locations-from-the-platform-group-of-converted-raw-files" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="extract-and-process-gps-locations-from-the-platform-group-of-converted-raw-files">
+<h2><span class="section-number">2.4. </span>Extract and process GPS locations from the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> group of converted raw files<a class="headerlink" href="#extract-and-process-gps-locations-from-the-platform-group-of-converted-raw-files" title="Permalink to this headline">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">xarray.open_mfdataset</span></code> to open the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> group from all the converted raw netcdf files as a single concatenated (combined) <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset. Then extract GPS <code class="docutils literal notranslate"><span class="pre">time1</span></code> (time stamp), <code class="docutils literal notranslate"><span class="pre">latitude</span></code> and <code class="docutils literal notranslate"><span class="pre">longitude</span></code> from this group and transform that data into a <a class="reference external" href="https://geopandas.org/">GeoPandas</a> <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> containing point-geometry objects that are readily manipulated via geospatial operations. A <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> adds geospatial capabilities to a Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>Due to the presence of multiple time coordinates in this group, care must be taken in defining how the concatenation (combine) operation is to be performed. This is captured in the arguments passed to <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code>.</p>
 <div class="cell docutils container">
@@ -6312,11 +6428,11 @@ Attributes:
 <img alt="_images/ms_PacificHake_EK60_cruisetracks_29_1.png" src="_images/ms_PacificHake_EK60_cruisetracks_29_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="read-mvbs-and-plot-track-echograms-for-time-periods-corresponding-to-two-ship-tracks">
-<h2><span class="section-number">2.5. </span>Read MVBS and plot track echograms for time periods corresponding to two ship tracks<a class="headerlink" href="#read-mvbs-and-plot-track-echograms-for-time-periods-corresponding-to-two-ship-tracks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="read-mvbs-as-a-concatenated-dataset">
-<h3><span class="section-number">2.5.1. </span>Read MVBS as a concatenated dataset<a class="headerlink" href="#read-mvbs-as-a-concatenated-dataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read-mvbs-and-plot-track-echograms-for-time-periods-corresponding-to-two-ship-tracks">
+<h2><span class="section-number">2.5. </span>Read MVBS and plot track echograms for time periods corresponding to two ship tracks<a class="headerlink" href="#read-mvbs-and-plot-track-echograms-for-time-periods-corresponding-to-two-ship-tracks" title="Permalink to this headline">#</a></h2>
+<section id="read-mvbs-as-a-concatenated-dataset">
+<h3><span class="section-number">2.5.1. </span>Read MVBS as a concatenated dataset<a class="headerlink" href="#read-mvbs-as-a-concatenated-dataset" title="Permalink to this headline">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">xarray.open_mfdataset</span></code> again to read and concatenate (combine) data files into a single xarray Dataset. This time, we’re reading the MVBS netCDF files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7418,9 +7534,9 @@ Attributes:
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-13b3e4a6-e4f0-4092-a90c-cd0829d62c08' class='xr-section-summary-in' type='checkbox'  checked><label for='section-13b3e4a6-e4f0-4092-a90c-cd0829d62c08' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>processing_software_name :</span></dt><dd>echopype</dd><dt><span>processing_software_version :</span></dt><dd>0.6.0</dd><dt><span>processing_time :</span></dt><dd>2022-05-28T07:05:41Z</dd><dt><span>processing_function :</span></dt><dd>preprocess.compute_MVBS</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="extract-mvbs-along-two-n-s-tracks-selected-via-geographical-bounding-boxes">
-<h3><span class="section-number">2.5.2. </span>Extract MVBS along two N-S tracks selected via geographical bounding boxes<a class="headerlink" href="#extract-mvbs-along-two-n-s-tracks-selected-via-geographical-bounding-boxes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="extract-mvbs-along-two-n-s-tracks-selected-via-geographical-bounding-boxes">
+<h3><span class="section-number">2.5.2. </span>Extract MVBS along two N-S tracks selected via geographical bounding boxes<a class="headerlink" href="#extract-mvbs-along-two-n-s-tracks-selected-via-geographical-bounding-boxes" title="Permalink to this headline">#</a></h3>
 <p>Define rectangular bounding boxes around two tracks oriented North-South, then plot a reference map showing all the GPS points (in red), the two bounding boxes (black), and the OOI mooring location (CE04 Oregon Offshore, yellow star) examined in the accompanying Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7480,9 +7596,9 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-mvbs-echograms-for-the-two-n-s-tracks-for-all-3-frequencies">
-<h3><span class="section-number">2.5.3. </span>Plot MVBS echograms for the two N-S tracks, for all 3 frequencies<a class="headerlink" href="#plot-mvbs-echograms-for-the-two-n-s-tracks-for-all-3-frequencies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot-mvbs-echograms-for-the-two-n-s-tracks-for-all-3-frequencies">
+<h3><span class="section-number">2.5.3. </span>Plot MVBS echograms for the two N-S tracks, for all 3 frequencies<a class="headerlink" href="#plot-mvbs-echograms-for-the-two-n-s-tracks-for-all-3-frequencies" title="Permalink to this headline">#</a></h3>
 <p>The final step is to create echogram plots (range vs ping_time) for each echosounder frequency and each of the two selected ship tracks. That’s 6 subplots. We first define two functions to simplify the task. <code class="docutils literal notranslate"><span class="pre">plot_echograms</span></code> plots the echograms of the 3 frequencies as a column of subplots, extracting the data for each frequency by using xarray’s <code class="docutils literal notranslate"><span class="pre">isel</span></code> index selector method, which uses index counts rather than values. As we can see above, <code class="docutils literal notranslate"><span class="pre">frequency_nominal</span></code> is a coordinate of the <code class="docutils literal notranslate"><span class="pre">Sv</span></code> (MVBS) DataArray.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7537,10 +7653,10 @@ Attributes:
 <img alt="_images/ms_PacificHake_EK60_cruisetracks_45_0.png" src="_images/ms_PacificHake_EK60_cruisetracks_45_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="package-versions">
-<h2><span class="section-number">2.6. </span>Package versions<a class="headerlink" href="#package-versions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="package-versions">
+<h2><span class="section-number">2.6. </span>Package versions<a class="headerlink" href="#package-versions" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span><span class="o">,</span> <span class="nn">s3fs</span>
@@ -7559,8 +7675,8 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -7584,9 +7700,11 @@ Attributes:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="echopype_tour.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -7602,24 +7720,28 @@ Attributes:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Echopype Developers<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Echopype Developers<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
