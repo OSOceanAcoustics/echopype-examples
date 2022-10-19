@@ -6,7 +6,7 @@ Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capa
 - [ms_PacificHake_EK60_cruisetracks.ipynb](ms_PacificHake_EK60_cruisetracks.ipynb). Exploring ship echosounder data from the Pacific Hake survey. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration and use.
     2. Extract and visualize echosounder data (EK60) with relative ease using geospatial and temporal filters. 
-- [ms_OOI_EK60_mooringtimeseries.ipynb](ms_OOI_EK60_mooringtimeseries.ipynb). Wacthing a solar eclipse using a moored echosounder. Goals:
+- [ms_OOI_EK60_mooringtimeseries.ipynb](ms_OOI_EK60_mooringtimeseries.ipynb). Wacthing a solar eclipse using an OOI moored echosounder. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration and use.
     2. Demonstrate the ease to interoperate echosounder data (EK60) with those from a different instrument in a single computing environment. Without echopype, additional wrangling across more than one software systems is needed to achieve the same visualization and comparison.
 
