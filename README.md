@@ -25,3 +25,18 @@ To run the notebooks locally in your computer, clone this repository and create 
 ```bash
 conda env create -f environment.yml
 ```
+
+To test the notebooks on a `dev` environment, first install a `dev` echopype environment following the [instructions in the echopype docs](https://echopype.readthedocs.io/en/stable/contributing.html#installation-for-echopype-development). Install these additional packages right *before* running the `pip install -e ".[plot]"` step:
+
+```python
+conda install -c conda-forge geopandas cartopy datashader holoviews hvplot
+```
+
+This development environment can be used to build the JupyterBook locally. To build the book:
+
+- Activate the echopype development environment
+- `cd` to your `echopype-examples` repository clone base folder, `CLONE`
+- Set the `PWD` environment variable to the repo base folder:
+  `export PWD=CLONE/echopype-examples`
+- Build the jupyter book:
+  `jupyter-book build --config $PWD/jupyterbook/config.yml --toc $PWD/jupyterbook/toc.yml notebooks`
