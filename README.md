@@ -34,7 +34,7 @@ conda env create -f environment.yml
 ```
 
 ## Set up a development environment to test the notebooks and build the JupyterBook locally
-To test the notebooks in a development environment, go through the following steps (note that you need to clone the `echopype` repository):
+To test the notebooks in an echopype development environment, go through the following steps (note that you need to clone the `echopype` repository):
 - Install an echopype development environment following the
  [instructions in the echopype docs](https://echopype.readthedocs.io/en/stable/contributing.html#installation-for-echopype-development) up to `conda install -c conda-forge ipykernel`
 - Install the following additional packages:
