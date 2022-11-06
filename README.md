@@ -22,7 +22,7 @@ The materials are presented as [Jupyter notebooks](https://realpython.com/jupyte
 To actively explore and run the notebooks without downloading them or having to configure a Python environment locally, open them with [Binder](https://mybinder.org) either by clicking on the "launch binder" badge above to launch a sandbox copy or the "launch" icon (a rocket) on the upper right corner of each notebook in the JupyterBook. 
 
 The typical Binder start time is about 3 minutes. Once Binder finishes spinning up, try running the first notebook. Below are a few things to bear in mind:
-- The [index.ipynb](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.ipynb) notebook contains an index of the existing example notebooks with brief descriptions
+- The [index.md](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/index.md) file contains an index of the existing example notebooks with brief descriptions
 - Currently, some notebooks may fail to run to completion in Binder due to memory demands that exceed what is available on Binder
 - When you are done, just close the browser tab and the sandbox will be removed
 
