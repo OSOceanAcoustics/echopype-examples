@@ -4,10 +4,13 @@ channels:
 dependencies:
   - python=3.9
   - ipykernel
-  - echopype=0.6.3
+  - echopype=0.6.4
   - s3fs
   - geopandas
   - cartopy
+  # 3/15/2023: Pin numpy to keep numba happy
+  # https://stackoverflow.com/questions/75190844/how-to-resolve-systemerror-initialization-of-internal-failed-without-raising-a
+  - numpy<1.24
   # -- holoviz --
   - datashader
   - holoviews
