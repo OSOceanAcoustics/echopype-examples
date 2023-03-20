@@ -5,8 +5,7 @@ channels:
 dependencies:
   - python=3.9
   - ipykernel
-  # Remove echopype version pinning for now
-  - echopype
+  - echopype>=0.6.4
   - s3fs
   - geopandas
   - cartopy
