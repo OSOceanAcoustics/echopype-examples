@@ -29,7 +29,7 @@ jobs:
 
       - name: Build JupyterBook
         run: |
-          jupyter-book build --config $PWD/jupyterbook/config.yml --toc $PWD/jupyterbook/toc.yml notebooks
+          jupyter-book build notebooks
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

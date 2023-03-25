@@ -16,7 +16,8 @@ runs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         activate-environment: echopype
-        environment-file: binder/environment.yml
+        # environment-file: binder/environment.yml
+        environment-file: .ci.environment.yml
         miniforge-variant: Mambaforge
         miniforge-version: 4.10.0-0
         use-mamba: true
