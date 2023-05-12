@@ -696,7 +696,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">populate_metadata</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">raw_fname</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Manually populate into the &quot;ed&quot; EchoData object </span>
 <span class="sd">    additional metadata about the dataset and the platform</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -7195,7 +7195,7 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">track_interval_str</span><span class="p">(</span><span class="n">trackdt</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Create the timestamp interval title string for a plot column</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Create the timestamp interval title string for a plot column</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">track_interval_title_str</span> <span class="o">=</span> <span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">trackdt</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b-</span><span class="si">%d</span><span class="s1"> %H:%MZ&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -7204,7 +7204,7 @@ Attributes:
     <span class="k">return</span> <span class="n">track_interval_title_str</span>
 
 <span class="k">def</span> <span class="nf">plot_echograms</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">freq_len</span><span class="p">,</span> <span class="n">column_idx</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Plot echograms of the 3 frequencies for xarray dataset ds,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot echograms of the 3 frequencies for xarray dataset ds,</span>
 <span class="sd">       as a column of subplots&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">freq_len</span><span class="p">):</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="n">column_idx</span><span class="p">]</span>
