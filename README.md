@@ -27,27 +27,38 @@ The typical Binder start time is about 3 minutes. Once Binder finishes spinning 
 - When you are done, just close the browser tab and the sandbox will be removed
 
 ## Run the notebooks locally on your machine
-To run the notebooks locally in your computer, clone this repository and create a conda environment using the conda environment file [environment.yml](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/binder/environment.yml) found in the `binder` folder:
+To run the notebooks locally in your computer, clone this repository (`git clone https://github.com/OSOceanAcoustics/echopype-examples.git`) and create a conda environment using the conda environment file [environment.yml](https://github.com/OSOceanAcoustics/echopype-examples/blob/main/binder/environment.yml) found in the `binder` folder:
 
 ```bash
 conda env create -f environment.yml
 ```
 
-## Set up a development environment to test the notebooks and build the JupyterBook locally
-To test the notebooks in an echopype development environment, go through the following steps (note that you need to clone the `echopype` repository):
-- Install an echopype development environment following the
- [instructions in the echopype docs](https://echopype.readthedocs.io/en/stable/contributing.html#installation-for-echopype-development) up to `conda install -c conda-forge ipykernel`
-- Install the following additional packages:
-  ```python
+This will create a new environment called `echopype.
+
+## Set up a development environment to test and develop the notebooks and build the JupyterBook locally
+
+First, clone this repository (see section above). Then, decide what kind of `echopype` environment you'd like to use.
+### Use the latest echopype release
+To test and develop notebooks using the latest echopype release:
+- Follow the instructions above to create a conda environment.
+- Activate the new environment. Assuming you used the default environment name: `conda activate echopype`
+- Install `jupyter-book`: `conda install -c conda-forge jupyter-book`
+### Use the current echopype development branch
+To test and develop notebooks with the latest `echopype` development branch, go through the following steps:
+- Install an [echopype development environment](https://echopype.readthedocs.io/en/stable/contributing.html#installation-for-echopype-development). First, run this conda create command (or better yet, use [`mamba`](https://mamba.readthedocs.io) instead of `conda`):
+  ```bash
+  conda create -c conda-forge -n echopype --yes python=3.9 --file https://raw.githubusercontent.com/OSOceanAcoustics/echopype/dev/requirements.txt --file https://raw.githubusercontent.com/OSOceanAcoustics/echopype/dev/requirements-dev.txt --file https://raw.githubusercontent.com/OSOceanAcoustics/echopype/dev/docs/requirements.txt
+  ```
+- Activate the new environment: `conda activate echopype`
+- Install additional packages:
+  ```bash
   conda install -c conda-forge geopandas cartopy datashader holoviews hvplot
   ```
 - Run `pip install -e ".[plot]"`
 
-This development environment can be used to build the JupyterBook locally. To build the book:
+### Building the JupyterBook locally
+Regardless of which `echopype` environment you built:
 
-- Activate the echopype development environment
-- `cd` to your `echopype-examples` repository clone base folder, `CLONE`
-- Set the `PWD` environment variable to the repo base folder:
-  `export PWD=CLONE/echopype-examples`
-- Build the jupyter book:
-  `jupyter-book build --config $PWD/jupyterbook/config.yml --toc $PWD/jupyterbook/toc.yml notebooks`
+- Activate the new `echopype` environment
+- `cd` to your `echopype-examples` repository clone base folder, eg, `/path/to/clone/echopype-examples`
+- Build the jupyter book: `jupyter-book build notebooks`
