@@ -12,7 +12,7 @@ Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capa
 
 ## Running the notebooks
 
-The notebooks in this site can be run with a [conda](https://docs.conda.io) environment created using the conda environment file https://github.com/OSOceanAcoustics/echopype-examples/blob/main/binder/environment.yml. 
+The notebooks in this site can be run with a [conda](https://docs.conda.io) environment created using the [instructions in the repository README.md](https://github.com/OSOceanAcoustics/echopype-examples#run-the-notebooks-locally-on-your-machine).
 
 To actively explore and run the notebooks without downloading them or having to configure a Python environment locally, open them with https://mybinder.org to launch a sandbox copy via the "launch" icon (a rocket) on each notebook in this site, in the upper right. The typical start time is about 3 minutes. Once binder finishes spinning up, try running the first notebook. Currently, some notebooks may fail to run to completion in binder due to memory demands that exceed what is available on binder. When you are done, just close the browser tab and the sandbox will be removed.
 
