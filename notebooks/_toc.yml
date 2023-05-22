@@ -10,3 +10,4 @@ parts:
     - file: echopype_tour
     - file: ms_PacificHake_EK60_cruisetracks
     - file: ms_OOI_EK60_mooringtimeseries
+    - file: glider-azfp-and-externaldata
