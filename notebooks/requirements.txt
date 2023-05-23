@@ -1,1 +1,2 @@
+# Dependecies for building the jupyter book
 jupyter-book
