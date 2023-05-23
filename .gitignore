@@ -139,3 +139,6 @@ dmypy.json
 # Jupyter Book
 _build/
 converted_ek60
+
+# Sphinx
+notebooks/conf.py
