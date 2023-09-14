@@ -9,6 +9,7 @@ Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capa
 - [ms_OOI_EK60_mooringtimeseries.ipynb](ms_OOI_EK60_mooringtimeseries.ipynb). Wacthing a solar eclipse using an OOI moored echosounder. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration and use.
     2. Demonstrate the ease to interoperate echosounder data (EK60) with those from a different instrument in a single computing environment. Without echopype, additional wrangling across more than one software systems is needed to achieve the same visualization and comparison.
+- [glider-azfp-and-externaldata.ipynb](glider-azfp-and-externaldata.ipynb). Use external platform and environmental data to process data from an AZFP echosounder deployed on a glider.
 
 ## Running the notebooks
 
