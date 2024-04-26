@@ -1,12 +1,10 @@
-name: echopype
+name: echopype_examples
 channels:
   - conda-forge
   - nodefaults
 dependencies:
   - python=3.10
   - ipykernel
-  # Keep the version to the latest release
-  - echopype==0.8.1
   - s3fs
   - geopandas
   - cartopy
@@ -15,3 +13,9 @@ dependencies:
   - datashader
   - holoviews
   - hvplot
+  # -- echopype --
+  # latest release
+  - echopype=0.8.4
+  # main branch (contains new changes)
+  # - pip:
+  #   - git+https://github.com/OSOceanAcoustics/echopype
