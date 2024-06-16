@@ -1,0 +1,19 @@
+name: echopype_examples
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - ipykernel
+  - s3fs
+  - geopandas
+  - cartopy
+  - numba # Helps ensure a recent version is installed
+  # -- holoviz --
+  - datashader
+  - holoviews
+  - hvplot
+  # -- echopype --
+  # main branch (contains latest changes)
+  - pip:
+    - git+https://github.com/OSOceanAcoustics/echopype
