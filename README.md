@@ -1,4 +1,4 @@
-# echopype examples
+# echopype-examples
 
 [![Zenodo Badge](https://img.shields.io/badge/DOI-10.5281/zenodo.5618177-blue)](https://doi.org/10.5281/zenodo.5618177)
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://tutorial.xarray.dev)
@@ -10,8 +10,8 @@ This repository hosts demonstration examples for [Echopype](https://echopype.rea
 The examples are written as exectuable Jupyter Notebooks that you can easily run and modify on locally on your own machine or on the cloud.
 
 
-### Quick glance via JupyterBook
-You can see all example notebooks at: https://osoceanacoustics.github.io/echopype-examples/
+## See all examples via JupyterBook
+All notebooks are rendered at: https://osoceanacoustics.github.io/echopype-examples/
 
 
 ## Run the notebooks locally on your computer
@@ -45,7 +45,7 @@ This will create a pre-configured JupyterLab with all the example notebooks unde
 
 
 ## Contribute to the example notebooks
-If you are interested in improving the existing notebooks or contributing new ones, awesome!
+Contributions are welcome and greatly appreciated!
 
 The steps to set up a development environment is the same as the above. But:
 - If you want to use the latest changes in the Echopype `main` branch, use `conda/environment-ep-main.yml` when creating the conda environment
