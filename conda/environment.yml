@@ -16,6 +16,3 @@ dependencies:
   # -- echopype --
   # latest release
   - echopype=0.8.4
-  # main branch (contains new changes)
-  # - pip:
-  #   - git+https://github.com/OSOceanAcoustics/echopype
