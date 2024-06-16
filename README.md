@@ -7,7 +7,7 @@
 
 This repository hosts demonstration examples for [Echopype](https://echopype.readthedocs.io/en/stable/), an open-source Python library that enables scalable and interoperabe water column sonar data processing. 
 
-The examples are written as exectuable Jupyter Notebooks that you can easily run and modify on locally on your own machine or on the cloud.
+The examples are written as exectuable Jupyter Notebooks that you can easily run and modify on locally on your own machine or a cloud virtual machine.
 
 
 ## See all examples via JupyterBook
@@ -41,7 +41,7 @@ You can run the notebooks directly on the cloud using Mybinder.org, by clicking 
 This will create a pre-configured JupyterLab with all the example notebooks under the `notebooks` folder. However, note that:
 - It usually takes a few minutes to spin up Binder
 - The computational resources are very minimal on Binder, so some example notebooks that handle many files may take a very long time or fail
-- Any changes you make will not be saved
+- Any changes you make to the notebooks won't be saved permanently because Binder provides a temporary workspace
 
 
 ## Contribute to the example notebooks
