@@ -19,3 +19,4 @@ dependencies:
   # main branch (contains new changes)
   # - pip:
   #   - git+https://github.com/OSOceanAcoustics/echopype
+  - echoregions
