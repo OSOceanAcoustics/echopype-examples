@@ -9,10 +9,11 @@ dependencies:
   - geopandas
   - cartopy
   - numba # Helps ensure a recent version is installed
+  - echoregions=0.2.1
   # -- holoviz --
   - datashader
   - holoviews
   - hvplot
   # -- echopype --
   # latest release
-  - echopype=0.8.4
+  - echopype=0.9.0
