@@ -11,7 +11,7 @@ Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capa
     2. Demonstrate the ease to interoperate echosounder data (EK60) with those from a different instrument in a single computing environment. Without Echopype, additional wrangling across more than one software systems is needed to achieve the same visualization and comparison.
 - [ms_Hake_NASC_EK60.ipynb](ms_Hake_NASC_EK60.ipynb) - *Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration, regridding, masking, and NASC computation.
-    2. Demonstrate the ease of applying biological and seabed annotations on Echopype backscatter data using Echoregions.
+    2. Demonstrate the ease of interfacing biological and seabed annotations with Echopype backscatter data using Echoregions.
 - [ms_Krill_NASC_EK60.ipynb](ms_Hake_NASC_EK60.ipynb) - *Not Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration, regridding, frequency differencing, and NASC computation.
     2. Demonstrate that Echopype efficiently scales customizable processing routines for large, multi-day datasets through seamless Dask integration.
