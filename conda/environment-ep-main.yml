@@ -9,7 +9,6 @@ dependencies:
   - geopandas
   - cartopy
   - numba # Helps ensure a recent version is installed
-  - echoregions=0.2.1
   # -- holoviz --
   - datashader
   - holoviews
@@ -18,3 +17,7 @@ dependencies:
   # main branch (contains latest changes)
   - pip:
     - git+https://github.com/OSOceanAcoustics/echopype
+  # -- echoregions --
+  # main branch (contains latest changes) and conda-forge doesn't have latest pip version yet
+  - pip:
+    - git+https://github.com/OSOceanAcoustics/echoregions
