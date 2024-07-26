@@ -8,6 +8,7 @@ dependencies:
   - s3fs
   - geopandas
   - cartopy
+  - scipy
   - numba # Helps ensure a recent version is installed
   # -- holoviz --
   - datashader
