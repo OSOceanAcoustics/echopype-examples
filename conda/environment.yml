@@ -10,6 +10,7 @@ dependencies:
   - cartopy
   - numba # Helps ensure a recent version is installed
   # -- holoviz --
+  - jupyter_bokeh
   - datashader
   - holoviews
   - hvplot
