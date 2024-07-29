@@ -7,6 +7,8 @@ parts:
   - caption: Demonstrations
     numbered: True  # Only applies to chapters in Part 1.
     chapters:
-    - file: echopype_tour
-    - file: ms_PacificHake_EK60_cruisetracks
-    - file: ms_OOI_EK60_mooringtimeseries
+    - file: glider_AZFP
+    - file: hake_NASC
+    - file: krill_NASC
+    - file: OOI_eclipse
+    - file: ship_track
