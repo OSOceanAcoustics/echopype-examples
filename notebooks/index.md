@@ -2,19 +2,22 @@
 
 Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capabilities and usage.
 
-- [echopype_tour.ipynb](echopype_tour.ipynb) - *Binder Friendly*. A quick tour of core echopype capabilities.
-- [ms_PacificHake_EK60_cruisetracks.ipynb](ms_PacificHake_EK60_cruisetracks.ipynb) - *Not Binder Friendly*. Exploring ship echosounder data from the Pacific Hake survey. Goals:
-    1. Illustrate a common workflow for echosounder data conversion, calibration and use.
-    2. Extract and visualize echosounder data (EK60) with relative ease using geospatial and temporal filters. 
-- [ms_OOI_EK60_mooringtimeseries.ipynb](ms_OOI_EK60_mooringtimeseries.ipynb) - *Not Binder Friendly*. Wacthing a solar eclipse using an OOI moored echosounder. Goals:
-    1. Illustrate a common workflow for echosounder data conversion, calibration and use.
-    2. Demonstrate the ease to interoperate echosounder data (EK60) with those from a different instrument in a single computing environment. Without Echopype, additional wrangling across more than one software systems is needed to achieve the same visualization and comparison.
-- [ms_Hake_NASC_EK60.ipynb](ms_Hake_NASC_EK60.ipynb) - *Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
+
+- [glider_AZFP.ipynb](glider_AZFP.ipynb) - *Binder Friendly*. Integrating External Glider Data and AZFP Data to Identify Zooplankton Shoals. Goals:
+    1. Integrate environmental calibration parameters, motion data, and location information from external glider data into Echopype-processed AZFP data to calibrate backscatter data and improve spatial referencing.
+    2. Identify Zooplankton Shoals using external Fisheries Acoustics on Echopype calibrated backscatter data.
+- [hake_NASC.ipynb](hake_NASC.ipynb) - *Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration, regridding, masking, and NASC computation.
     2. Demonstrate the ease of interfacing biological and seabed annotations with Echopype backscatter data using Echoregions.
-- [ms_Krill_NASC_EK60.ipynb](ms_Hake_NASC_EK60.ipynb) - *Not Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
+- [krill_NASC.ipynb](krill_NASC.ipynb) - *Not Binder Friendly*. Computing Biomass-proxy of Pacific Hake. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration, regridding, frequency differencing, and NASC computation.
     2. Demonstrate that Echopype efficiently scales customizable processing routines for large, multi-day datasets through seamless Dask integration.
+- [OOI_eclipse.ipynb](OOI_eclipse.ipynb) - *Not Binder Friendly*. Watching a solar eclipse using an OOI moored echosounder. Goals:
+    1. Illustrate a common workflow for echosounder data conversion, calibration and use.
+    2. Demonstrate the ease to interoperate echosounder data (EK60) with those from a different instrument in a single computing environment. Without Echopype, additional wrangling across more than one software systems is needed to achieve the same visualization and comparison.
+- [ship_track.ipynb](ship_track.ipynb) - *Not Binder Friendly*. Exploring ship echosounder data from the Pacific Hake survey. Goals:
+    1. Illustrate a common workflow for echosounder data conversion, calibration and use.
+    2. Extract and visualize echosounder data (EK60) with relative ease using geospatial and temporal filters. 
 
 
 ## Running the notebooks
