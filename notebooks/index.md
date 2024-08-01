@@ -2,7 +2,6 @@
 
 Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capabilities and usage.
 
-
 - [glider_AZFP.ipynb](glider_AZFP.ipynb) - *Binder Friendly*. Integrating External Glider Data and AZFP Data to Identify Zooplankton Shoals. Goals:
     1. Integrate environmental calibration parameters, motion data, and location information from external glider data into Echopype-processed AZFP data to calibrate backscatter data and improve spatial referencing.
     2. Identify Zooplankton Shoals using external Fisheries Acoustics on Echopype calibrated backscatter data.
@@ -18,7 +17,6 @@ Jupyter notebooks demonstrating [echopype](https://echopype.readthedocs.io) capa
 - [ship_track.ipynb](ship_track.ipynb) - *Not Binder Friendly*. Exploring ship echosounder data from the Pacific Hake survey. Goals:
     1. Illustrate a common workflow for echosounder data conversion, calibration and use.
     2. Extract and visualize echosounder data (EK60) with relative ease using geospatial and temporal filters. 
-
 
 ## Running the notebooks
 
