@@ -16,9 +16,7 @@ dependencies:
   - datashader
   - holoviews
   - hvplot
-  # -- echopype and echoregions --
+  # -- echopype --
   # echopype main branch contains latest changes (not in the stable release)
-  # echoregions is not on conda-forge yet
   - pip:
     - git+https://github.com/OSOceanAcoustics/echopype
-    - git+https://github.com/OSOceanAcoustics/echoregions

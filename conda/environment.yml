@@ -19,7 +19,3 @@ dependencies:
   # -- echopype --
   # latest release
   - echopype=0.9.0
-  # -- echoregions --
-  # main branch (contains latest changes) and conda-forge doesn't have latest pip version yet
-  - pip:
-    - git+https://github.com/OSOceanAcoustics/echoregions
