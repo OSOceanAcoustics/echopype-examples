@@ -7,8 +7,8 @@ parts:
   - caption: Demonstrations
     numbered: True  # Only applies to chapters in Part 1.
     chapters:
-    - file: glider_AZFP
-    - file: hake_NASC
-    - file: krill_NASC
     - file: OOI_eclipse
-    - file: ship_track
+    - file: glider_AZFP
+    - file: hake_mask
+    - file: krill_freq_diff
+    - file: ship_tracks
