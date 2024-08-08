@@ -8,12 +8,15 @@ dependencies:
   - s3fs
   - geopandas
   - cartopy
+  - scipy
+  - echopy
   - numba # Helps ensure a recent version is installed
   # -- holoviz --
+  - jupyter_bokeh
   - datashader
   - holoviews
   - hvplot
   # -- echopype --
-  # main branch (contains latest changes)
+  # echopype main branch contains latest changes (not in the stable release)
   - pip:
     - git+https://github.com/OSOceanAcoustics/echopype

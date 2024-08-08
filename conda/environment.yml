@@ -8,11 +8,14 @@ dependencies:
   - s3fs
   - geopandas
   - cartopy
+  - scipy
+  - echopy
   - numba # Helps ensure a recent version is installed
   # -- holoviz --
+  - jupyter_bokeh
   - datashader
   - holoviews
   - hvplot
   # -- echopype --
   # latest release
-  - echopype=0.8.4
+  - echopype=0.9.0
