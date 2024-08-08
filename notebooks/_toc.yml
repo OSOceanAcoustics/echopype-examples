@@ -5,10 +5,10 @@ format: jb-book
 root: index
 parts:
   - caption: Demonstrations
-    numbered: True  # Only applies to chapters in Part 1.
+    numbered: True
     chapters:
-    - file: glider_AZFP
-    - file: hake_NASC
-    - file: krill_NASC
     - file: OOI_eclipse
-    - file: ship_track
+    - file: ship_tracks
+    - file: krill_freq_diff
+    - file: hake_mask
+    - file: glider_AZFP

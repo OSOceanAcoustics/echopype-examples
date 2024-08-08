@@ -11,7 +11,7 @@ The examples are written as exectuable Jupyter Notebooks that you can easily run
 
 
 ## See all examples via JupyterBook
-All notebooks are rendered at: https://osoceanacoustics.github.io/echopype-examples/
+All notebooks are rendered at: https://echopype-examples.readthedocs.io/
 
 
 ## Run the notebooks locally on your computer
