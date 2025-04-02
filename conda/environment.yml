@@ -9,7 +9,6 @@ dependencies:
   - geopandas
   - cartopy
   - scipy
-  - echopy
   - numba # Helps ensure a recent version is installed
   # -- holoviz --
   - jupyter_bokeh
@@ -18,4 +17,4 @@ dependencies:
   - hvplot
   # -- echopype --
   # latest release
-  - echopype=0.9.0
+  - echopype=0.10.0
