@@ -26,8 +26,8 @@ If you want to run these notebooks on your local computer, follow the steps belo
   ```
 - Create a conda environment using the `environment.yml` file in the `conda` folder. We recommend using Mamba (see steps [here](https://github.com/conda-forge/miniforge#mambaforge) to install).
   ```shell
-  # create an environment
-  mamba env create -n echopype-examples -f conda/environment.yml
+  # create an environment using latest echopype branch
+  mamba env create -n echopype-examples -f conda/environment-ep-main.yml
 
   # activate the environment
   conda activate echopype-examples
