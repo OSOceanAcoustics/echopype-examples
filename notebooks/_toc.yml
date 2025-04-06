@@ -7,6 +7,7 @@ parts:
   - caption: Demonstrations
     numbered: True
     chapters:
+    - file: getting_started
     - file: OOI_eclipse
     - file: ship_tracks
     - file: krill_freq_diff
