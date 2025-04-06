@@ -2,6 +2,7 @@
 
 Jupyter notebooks demonstrating [Echopype](https://echopype.readthedocs.io) capabilities and usage.
 
+- [getting_started.ipynb](getting_started.ipynb) - A minimum example to get started on Echopype functions. 
 - [OOI_eclipse.ipynb](OOI_eclipse.ipynb) - *Not Binder Friendly*. Pairing acoustic data from an upward-looking echosounder and shortwave irradiance measured by a pyrometer on a surface mooring to observe the movement response of zooplankton to a solar eclipse. 
 - [ship_tracks.ipynb](ship_tracks.ipynb) - *Not Binder Friendly*. Subselect sections of echo data based on ship GPS data embedded in the echosounder raw files to demonstrate the power of label-aware data processing based on standardized netCDF data model.
 - [krill_freq_diff.ipynb](krill_freq_diff.ipynb) - *Not Binder Friendly*. Perform frequency-differencing analysis to identify fluid-like zooplankton scatterers (likely krill) in ship echosounder data, and compute nautical acoustic scattering coefficient (NASC) based on the classification.
