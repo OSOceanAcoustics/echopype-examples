@@ -10,6 +10,7 @@ dependencies:
   - cartopy
   - scipy
   - numba # Helps ensure a recent version is installed
+  - numpy<2
   # -- holoviz --
   - jupyter_bokeh
   - datashader
@@ -17,4 +18,4 @@ dependencies:
   - hvplot
   # -- echopype --
   # latest release
-  - echopype=0.10.0
+  - echopype=0.10.1

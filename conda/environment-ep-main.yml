@@ -10,6 +10,8 @@ dependencies:
   - cartopy
   - scipy
   - numba # Helps ensure a recent version is installed
+  - numpy<2
+  - pip
   # -- holoviz --
   - jupyter_bokeh
   - datashader
@@ -18,4 +20,4 @@ dependencies:
   # -- echopype --
   # echopype main branch contains latest changes (not in the stable release)
   - pip:
-    - git+https://github.com/ctuguinay/echopype@investigate_chunking
+    - git+https://github.com/OSOceanAcoustics/echopype.git
