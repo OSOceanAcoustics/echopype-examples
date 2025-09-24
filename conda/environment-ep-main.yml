@@ -21,3 +21,4 @@ dependencies:
   # echopype main branch contains latest changes (not in the stable release)
   - pip:
     - git+https://github.com/OSOceanAcoustics/echopype.git
+    - echoregions
