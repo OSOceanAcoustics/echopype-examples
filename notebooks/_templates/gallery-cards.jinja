@@ -1,0 +1,16 @@
+::::{grid} 1 2 2 3
+:gutter: 2
+
+{% for item in data %}
+:::{card}
+:link: {{ item.website or item.notebook }}
+{% if item.image %}:img-top: {{ item.image }}{% endif %}
+
+**{{ item.name }}**
+
+{% if item.summary %}{{ item.summary }}{% endif %}
+
+:::
+{% endfor %}
+
+:::: 

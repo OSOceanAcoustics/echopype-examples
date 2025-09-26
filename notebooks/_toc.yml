@@ -13,3 +13,4 @@ parts:
     - file: krill_freq_diff
     - file: hake_mask
     - file: glider_AZFP
+    - file: seafloor_detection
