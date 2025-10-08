@@ -46,3 +46,10 @@
   notebook: seafloor_detection.ipynb
   summary: Seafloor detection with echopype (two algorithms) and use of echoregions; compute a bottom line and mask below-bottom data.
   image: images/gallery/07_seafloor.png
+
+- name: Transient Noise Removal
+  website: https://echopype-examples.readthedocs.io/en/latest/transient_noise.html
+  repository: https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/transient_noise.ipynb
+  notebook: transient_noise.ipynb
+  summary: Transient noise removal with echopype (two algorithms) and exploring the effects on Sv profiles.
+  image: images/gallery/08_transient.png
