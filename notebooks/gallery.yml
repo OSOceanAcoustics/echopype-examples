@@ -52,4 +52,4 @@
   repository: https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/transient_noise.ipynb
   notebook: transient_noise.ipynb
   summary: Transient noise removal with echopype (two algorithms) and exploring the effects on Sv profiles.
-  image: images/gallery/08_transient.png
+  image: images/gallery/08_transient_noise.png
