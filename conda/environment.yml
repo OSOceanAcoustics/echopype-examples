@@ -17,4 +17,4 @@ dependencies:
   - hvplot
   # -- echopype --
   # latest release
-  - echopype=0.10.1
+  - echopype=0.11.1
