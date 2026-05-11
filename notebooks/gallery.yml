@@ -53,3 +53,10 @@
   notebook: transient_noise.ipynb
   summary: Transient noise removal with echopype (two algorithms) and exploring the effects on Sv profiles.
   image: images/gallery/08_transient_noise.png
+
+- name: Single Target Detection (CW Split-Beam)
+  website: https://echopype-examples.readthedocs.io/en/latest/single_target_detection_CW_splitbeam.html
+  repository: https://github.com/OSOceanAcoustics/echopype-examples/blob/main/notebooks/single_target_detection_CW_splitbeam.ipynb
+  notebook: single_target_detection_CW_splitbeam.ipynb
+  summary: Detect and refine single acoustic targets in CW split-beam data using echopype, including beam compensation and target strength estimation.
+  image: images/gallery/09_std_ev_met2.png
