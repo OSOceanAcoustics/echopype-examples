@@ -1,8 +1,10 @@
-::::{grid} 1 2 2 3
-:gutter: 2
-
 {% for section in data %}
+
 ## {{ section["section"] }}
+
+::::{grid} 1 2 3 4
+:gutter: 2
+:class-container: gallery-grid
 
 {% for item in section["items"] %}
 :::{card}
@@ -17,4 +19,5 @@
 {% endfor %}
 
 ::::
+
 {% endfor %}
