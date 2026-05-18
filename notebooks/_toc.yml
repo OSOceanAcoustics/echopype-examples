@@ -20,3 +20,7 @@ parts:
       - file: krill_freq_diff
       - file: hake_mask
       - file: glider_AZFP
+
+  - caption: Community showcase
+    numbered: False
+    chapters: []
