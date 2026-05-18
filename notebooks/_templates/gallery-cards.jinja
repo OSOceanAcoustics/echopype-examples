@@ -1,7 +1,10 @@
+{% for section in data %}
+## {{ section.section }}
+
 ::::{grid} 1 2 2 3
 :gutter: 2
 
-{% for item in data %}
+{% for item in section.items %}
 :::{card}
 :link: {{ item.website or item.notebook }}
 {% if item.image %}:img-top: {{ item.image }}{% endif %}
@@ -13,4 +16,6 @@
 :::
 {% endfor %}
 
-:::: 
+::::
+
+{% endfor %}
