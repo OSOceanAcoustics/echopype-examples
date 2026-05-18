@@ -23,4 +23,5 @@ parts:
 
   - caption: Community showcase
     numbered: False
-    chapters: []
+    chapters:
+      - file: community_showcase
